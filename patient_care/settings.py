@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '192.168.43.61',
     '129.204.51.171',
+    'lovehyh.swiftwhale.cn'
 ]
 
 
