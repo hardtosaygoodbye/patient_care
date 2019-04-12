@@ -77,7 +77,7 @@ class LoginView(APIView):
 class HospitalView(APIView):
     def get(self, request):
         hospitals = Hospital.objects.all()
-        hospitalSerializers = HospitalSerializer(data = hospitals, many = True)
+        hospitalSerializers = HospitalSerializer(hospitals, many = True)
         return Response({'code': 0, 'hospitals': hospitalSerializers.data})
 
 class CarerView(APIView):

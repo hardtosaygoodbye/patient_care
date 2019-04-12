@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view()),
     url(r'^hospital/$', HospitalView.as_view()),
     url(r'^carer/$', CarerView.as_view()),
+    url(r'^suggestion/$', SuggestionView.as_view()),
 ]

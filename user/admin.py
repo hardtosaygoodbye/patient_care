@@ -9,4 +9,5 @@ admin.site.register(Authority)
 admin.site.register(Hospital)
 admin.site.register(Carer)
 admin.site.register(Evaluation)
+admin.site.register(Suggestion)
 
