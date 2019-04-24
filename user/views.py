@@ -32,6 +32,7 @@ class UserView(APIView):
             return Response({'detail': '注册失败'}, 400)
         userSerializer = UserSerializer(user)
         authority = Authority(user = user)
+        authority.save()
         return Response({
             'code': 0, 
             'user': userSerializer.data, 
@@ -90,7 +91,7 @@ class CarerView(APIView):
         except:
             return Response({'detail': 'hospital not exist'}, 400)
         carers = Carer.objects.filter(hospital = hospital)
-        carerSerializers = CarerSerializer(data = carers, many = True)
+        carerSerializers = CarerSerializer(carers, many = True)
         return Response({'code': 0, 'carers': carerSerializers.data})
 
 class EvaluationView(APIView):
