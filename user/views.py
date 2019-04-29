@@ -102,9 +102,6 @@ class EvaluationView(APIView):
         scores = request.data.get('scores')
         tip = request.data.get('tip')
         side = request.data.get('side')
-        if not (token and carer_id and scores and tip and side):
-            return Response({'detail': 'token,carer_id,scores,tip,side\
-            required'}, 404)
         score_arr = scores.split(",")
         score_arr = [Decimal(i) for i in score_arr]
         user = token2user(token)
