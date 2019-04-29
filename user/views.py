@@ -139,10 +139,10 @@ class EvaluationView(APIView):
         )
         evaluation.save()
         # 求平均值
-        total_score = 0.0
+        total_score = Decimal(0.0)
         for score in score_arr:
             total_score = total_score + score
-        average_score = total_score/18.0
+        average_score = total_score/Decimal(18.0)
         if side == 0:
             # 医院
             carer.hospital_score =\
