@@ -113,7 +113,7 @@ class EvaluationView(APIView):
             carer = Carer.objects.get(pk = carer_id)
         except:
             return Response({'detail': 'carer not found'}, 404)
-        evalutation = Evaluation(
+        evaluation = Evaluation(
             user = user,
             carer = carer,
             q1 = score_arr[0],
