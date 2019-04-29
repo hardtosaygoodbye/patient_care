@@ -69,6 +69,7 @@ class LoginView(APIView):
             return Response({'detail': '用户名或者密码错误'}, 400)
         userSerializer = UserSerializer(user)
         authority = Authority(user = user)
+        authority.save()
         return Response({
             'code': 0,
             'user': userSerializer.data,
