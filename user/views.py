@@ -162,7 +162,7 @@ class EvaluationView(APIView):
             /(carer.family_num+1)
             carer.family_num = carer.family_num + 1
         carer.total_score = \
-        0.5*carer.patient_score+0.25*carer.family_score+0.25*carer.hospital_score
+        Decimal(0.5)*carer.patient_score+Decimal(0.25)*carer.family_score+Decimal(0.25)*carer.hospital_score
         carer.save()
         return Response({'detail': '评价成功'})
 
